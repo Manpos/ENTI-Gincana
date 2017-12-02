@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">ENTIgincana</string>
+    <string name="gestionar">Gestionar</string>
+    <string name="veure">Veure pistes</string>
+    <string name="sortir">Sortir</string>
+    <string name="identificador">Identificador</string>
+    <string name="descripcio">Descripció</string>
+    <string name="latitud">Latitud</string>
+    <string name="longitud">Longitud</string>
+    <string name="idseguent">Id següent pista</string>
+    <string name="accepta">Acceptar</string>
+    <string name="cancela">Cancel·lar</string>
+    <string name="mostrarpistes">Mostrar pistes</string>
+    <string name="aboutinfo">Mi info</string>
+    <string name="about">About</string>
+    <string name="exit">Exit</string>
+    <string-array name="tipus_pistes">
+        <item>Imatge</item>
+        <item>Text</item>
+        <item>So</item>
+    </string-array>
+    <string name="title_activity_show_hints">ShowHints</string>
+    <string name="title_activity_mostrar_pistes">MostrarPistes</string>
+
+</resources>

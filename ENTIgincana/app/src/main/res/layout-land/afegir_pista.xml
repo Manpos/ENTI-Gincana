@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/addhint_identificador"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:ems="10"
+        android:hint="@string/identificador"
+        android:inputType="number" />
+
+    <Spinner
+        android:id="@+id/addhint_tipuspista"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:entries="@array/tipus_pistes" />
+
+    <EditText
+        android:id="@+id/addhint_descripcio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:ems="10"
+        android:hint="@string/descripcio"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/addhint_latitud"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:ems="10"
+        android:hint="@string/latitud"
+        android:inputType="number|numberDecimal" />
+
+    <EditText
+        android:id="@+id/addhint_longitud"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:ems="10"
+        android:hint="@string/longitud"
+        android:inputType="number|numberDecimal" />
+
+    <EditText
+        android:id="@+id/addhint_idseguent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:ems="10"
+        android:hint="@string/idseguent"
+        android:inputType="number" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/addhint_btn_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/cancela" />
+
+        <Button
+            android:id="@+id/addhint_btn_showhints"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="mostrarPistes"
+            android:text="@string/mostrarpistes" />
+
+        <Button
+            android:id="@+id/addhint_btn_accept"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="afegirNovaPista"
+            android:text="@string/accepta" />
+
+    </LinearLayout>
+</LinearLayout>
