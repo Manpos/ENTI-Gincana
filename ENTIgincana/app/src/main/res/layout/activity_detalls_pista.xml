@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.gincana.enti.entigincana.DetallsPista"
-    android:orientation="vertical">
+    android:orientation="horizontal">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/appbarback"
@@ -58,24 +58,18 @@
         </LinearLayout>
     </android.support.v7.widget.Toolbar>
 
-    <TextView
-        android:id="@+id/hint_title"
+    <fragment
+        android:id="@+id/hint_info_fragment"
+        android:name="com.gincana.enti.entigincana.DetallsPistaFragment"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="HOLOS"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        tools:paddingLeft="10dp"
-        tools:paddingTop="10dp" />
+        android:layout_height="match_parent"
+        />
 
-    <TextView
-        android:id="@+id/hint_description"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Descripció de la pista"
-        android:textSize="20sp"
-        tools:paddingLeft="10dp"
-        tools:paddingTop="10dp" />
+    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/mapaENTI"
+        android:name="com.google.android.gms.maps.MapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
 
 </LinearLayout>

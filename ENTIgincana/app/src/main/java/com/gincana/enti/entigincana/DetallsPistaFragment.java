@@ -6,10 +6,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-/**
- * Created by mique on 04/12/2017.
- */
-
 public class DetallsPistaFragment extends Fragment {
     private View v;
     public View onCreateView(LayoutInflater inflador, ViewGroup contenedor, Bundle savedInstanceState){
