@@ -68,7 +68,7 @@ public class Adaptador extends RecyclerView.Adapter<Adaptador.ViewHolder> {
 
     public void onBindViewHolder(ViewHolder holder, int posicio) {
 
-        holder.nomPista.setText(llistaPistes.get(posicio).getDescription());
+        holder.nomPista.setText("Pista " + llistaPistes.get(posicio).getIdentificator());
         holder.imatgePista.setImageResource(llistaPistes.get(posicio).type());
         hintId = posicio;
 

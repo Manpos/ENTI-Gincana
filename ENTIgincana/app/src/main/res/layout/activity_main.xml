@@ -3,10 +3,21 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/btn_gestionar_main"
+    <include
+        android:id="@+id/appbarup"
+        layout="@layout/toolbarbasic" />
+
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="mostrarPistes"
-        android:text="@string/gestionar" />
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/btn_gestionar_main"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="mostrarPistes"
+            android:text="@string/gestionar" />
+    </RelativeLayout>
+
 </LinearLayout>
+

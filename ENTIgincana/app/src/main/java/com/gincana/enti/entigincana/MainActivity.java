@@ -3,6 +3,7 @@ package com.gincana.enti.entigincana;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -17,21 +18,23 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        HintList.addHint(new Image(1, "Pista de prova 1", 88.66, 66.88,2,"mada"));
-        HintList.addHint(new Audio(2, "Pista de prova 2", 88.66, 66.88,3,"mada"));
-        HintList.addHint(new Text(3, "Pista de prova 3", 88.66, 66.88,4,"mada"));
+        HintList.addHint(new Image(1, "Descripció Pista 1", 88.66, 66.88,2,"mada"));
+        HintList.addHint(new Audio(2, "Descripció Pista 2", 88.66, 66.88,3,"mada"));
+        HintList.addHint(new Text(3, "Descripció Pista 3", 88.66, 66.88,4,"mada"));
 
         setContentView(R.layout.activity_main);
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.appbarup);
+        setSupportActionBar(toolbar);
+
+        //Toolbar toolbarDown = (Toolbar) findViewById(R.id.appbar);
+        //setSupportActionBar(toolbarDown);
+
         //setContentView(R.layout.afegir_pista);
     }
 
     public void mostrarPistes(View view){
         Intent i  = new Intent(this, MostrarPistes.class);
-        startActivity(i);
-    }
-
-    public void ShowAbout(View view){
-        Intent i = new Intent(this, About.class);
         startActivity(i);
     }
 

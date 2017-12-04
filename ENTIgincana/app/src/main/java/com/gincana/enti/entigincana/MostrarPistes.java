@@ -10,6 +10,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
@@ -24,7 +26,8 @@ public class MostrarPistes extends AppCompatActivity implements View.OnClickList
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mostrar_pistes);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.showhints_toolbar);
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.appbar);
         setSupportActionBar(toolbar);
 
         recyclerView = (RecyclerView)findViewById(R.id.recycler_view);
@@ -44,18 +47,60 @@ public class MostrarPistes extends AppCompatActivity implements View.OnClickList
         });
     }
 
+    // Menu configuration
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+        getMenuInflater().inflate(R.menu.bar_menu_gestionarpistes, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        int id = item.getItemId();
+        if(id == R.id.item_menu_gestionarpistes_esborrar){
+            Intent i = new Intent(this, EsborrarPistes.class);
+            startActivityForResult(i,0000);
+            return true;
+        }
+        if(id == R.id.item_menu_exit){
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    //Obrir activitats
+
     public void afegirPistes(View view){
         Intent i = new Intent(this, addHints.class);
         startActivity(i);
     }
 
-    public void onClick(View v){
+    public void esborrarPistes(View view){
+        Intent i = new Intent(this, EsborrarPistes.class);
+        startActivityForResult(i,0000);
+    }
 
-        Toast.makeText(this, "click", Toast.LENGTH_SHORT).show();
+    @Override protected void onActivityResult(int requestCode, int resultCode, Intent data){
+        adaptador.notifyDataSetChanged();
+    }
+
+    //Input sobre pistes
+
+    public void onClick(View v){
+        Intent i = new Intent(this, DetallsPista.class);
+        i.putExtra("listIndex", recyclerView.getChildAdapterPosition(v));
+        startActivityForResult(i,1111);
     }
 
     public boolean onLongClick(View v){
-        final View currentView = v;
+        esborrarPista(v);
+        return true;
+    }
+
+    //Metodes per esborrar pistes
+
+    private void esborrarPista(final View v){
         new AlertDialog.Builder(this)
                 .setTitle("Borrant pista")
                 .setMessage("Segur que vols borrar la pista?")
@@ -63,16 +108,14 @@ public class MostrarPistes extends AppCompatActivity implements View.OnClickList
                 {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        HintList.getHintList().remove(recyclerView.getChildAdapterPosition(currentView));
+                        HintList.getHintList().remove(recyclerView.getChildAdapterPosition(v));
                         adaptador.notifyDataSetChanged();
                     }
 
                 })
                 .setNegativeButton("No", null)
                 .show();
-
-        Toast.makeText(this, "long click" , Toast.LENGTH_SHORT).show();
-        return true;
     }
+
 
 }

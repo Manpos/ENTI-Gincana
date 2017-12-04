@@ -34,17 +34,7 @@ public class HintList {
     }
 
     public static void deleteHint(int id){
-
-        int listPosition = -1;
-
-        for (Hint h : hintList) {
-            if (h.getIdentificator() == id) {
-                listPosition = hintList.indexOf(h);
-            }
-        }
-        if(listPosition > -1){
-            hintList.remove(listPosition);
-        }
+        hintList.remove(searchHint(id));
     }
 
     public static int nextHint(int id){

@@ -76,4 +76,8 @@ public class addHints extends AppCompatActivity {
 
     }
 
+    public void closeAddHints(View view){
+        finish();
+    }
+
 }

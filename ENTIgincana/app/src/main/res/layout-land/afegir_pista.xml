@@ -65,15 +65,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:onClick="closeAddHints"
             android:text="@string/cancela" />
-
-        <Button
-            android:id="@+id/addhint_btn_showhints"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:onClick="mostrarPistes"
-            android:text="@string/mostrarpistes" />
 
         <Button
             android:id="@+id/addhint_btn_accept"

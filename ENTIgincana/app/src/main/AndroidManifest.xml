@@ -19,10 +19,12 @@
         <activity android:name=".About" />
         <activity android:name=".ShowHints" />
         <activity android:name=".addHints" />
+        <activity android:name=".EsborrarPistes" />
         <activity
             android:name=".MostrarPistes"
             android:label="@string/title_activity_mostrar_pistes"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".DetallsPista"></activity>
     </application>
 
 </manifest>

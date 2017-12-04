@@ -14,6 +14,7 @@
     <string name="aboutinfo">Mi info</string>
     <string name="about">About</string>
     <string name="exit">Exit</string>
+    <string name="esborrarpista">Esborrar</string>
     <string-array name="tipus_pistes">
         <item>Imatge</item>
         <item>Text</item>
@@ -21,5 +22,6 @@
     </string-array>
     <string name="title_activity_show_hints">ShowHints</string>
     <string name="title_activity_mostrar_pistes">MostrarPistes</string>
+    <string name="title_activity_detalls_pista">detallsPista</string>
 
 </resources>
